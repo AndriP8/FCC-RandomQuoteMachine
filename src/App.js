@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "./App.scss";
 import colorsArray from "./colorsArray";
-import { faWater } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faTwitter } from "@fortawesome/free-brands-svg-icons";
 const quotes = "https://gist.githubusercontent.com/camperbot/5a022b72e96c4c9585c32bf6a75f62d9/raw/e3c6895ce42069f0ee7e991229064f167fe8ccdc/quotes.json";
 
 function App() {
@@ -35,7 +35,10 @@ function App() {
     <div className="App">
       <header className="App-header" style={{ backgroundColor: accentColors }}>
         <div id="quote-box" style={{ color: accentColors }}>
-          <p id="text">"{qoute}</p>
+          <p id="text">
+            <span>&ldquo;</span>
+            {qoute}
+          </p>
           <p id="author">- {author}</p>
           <div className="footer">
             <a
@@ -45,7 +48,7 @@ function App() {
               id="tweet-quote"
               style={{ backgroundColor: accentColors }}
             >
-              <FontAwesomeIcon icon={faWater} />
+              <FontAwesomeIcon icon={faTwitter} />
             </a>
             <button className="btn" id="new-quote" onClick={() => getRandomQuote()} style={{ backgroundColor: accentColors }}>
               New Quote
